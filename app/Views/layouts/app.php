@@ -16,16 +16,19 @@
             <div class="mn-logo">Memo<span>Network</span></div>
             <p class="mn-muted">Control Panel Alpha 26</p>
             <nav class="mn-nav">
-                <a href="<?= htmlspecialchars(Url::to('dashboard.php')) ?>">Dashboard</a>
-                <a href="<?= htmlspecialchars(Url::to('players.php')) ?>">Players</a>
-                <a href="<?= htmlspecialchars(Url::to('commands.php')) ?>">Command Center</a>
-                <a href="<?= htmlspecialchars(Url::to('builds.php')) ?>">Builds</a>
-                <a href="<?= htmlspecialchars(Url::to('logs.php')) ?>">Logs</a>
-                <a href="<?= htmlspecialchars(Url::to('loading.php')) ?>">Loading Screen</a>
-                <a href="<?= htmlspecialchars(Url::to('news.php')) ?>">News</a>
-                <a href="<?= htmlspecialchars(Url::to('settings.php')) ?>">Settings</a>
-                <a href="<?= htmlspecialchars(Url::to('migrate.php')) ?>">Database Update</a>
-                <a href="<?= htmlspecialchars(Url::to('logout.php')) ?>">Logout</a>
+                <a href="<?= Url::to('dashboard.php') ?>">Dashboard</a>
+                <a href="<?= Url::to('players.php') ?>">Players</a>
+                <a href="<?= Url::to('commands.php') ?>">Command Center</a>
+                <a href="<?= Url::to('console.php') ?>">Live Console</a>
+                <a href="<?= Url::to('monitoring.php') ?>">Monitoring</a>
+                <a href="<?= Url::to('alerts.php') ?>">Alerts</a>
+                <a href="<?= Url::to('builds.php') ?>">Builds</a>
+                <a href="<?= Url::to('logs.php') ?>">Logs</a>
+                <a href="<?= Url::to('loading.php') ?>">Loading Screen</a>
+                <a href="<?= Url::to('news.php') ?>">News</a>
+                <a href="<?= Url::to('settings.php') ?>">Settings</a>
+                <a href="<?= Url::to('migrate.php') ?>">Database Update</a>
+                <a href="<?= Url::to('logout.php') ?>">Logout</a>
             </nav>
         </aside>
         <main class="mn-main">
@@ -34,7 +37,7 @@
     </div>
 <?php endif; ?>
 <?php foreach (($scripts ?? []) as $script): ?>
-    <script src="<?= htmlspecialchars(Url::to($script)) ?>"></script>
+    <script src="<?= Url::to($script) ?>"></script>
 <?php endforeach; ?>
 </body>
 </html>
