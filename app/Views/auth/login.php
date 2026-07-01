@@ -1,5 +1,6 @@
+<?php use MemoNetwork\Core\Url; ?>
 <div class="mn-login">
-    <form class="mn-login-card" method="post" action="/login.php">
+    <form class="mn-login-card" method="post" action="<?= htmlspecialchars(Url::to('login.php')) ?>">
         <div class="mn-logo">Memo<span>Network</span></div>
         <p class="mn-muted">Log in op het MemoNetwork Control Panel.</p>
 
