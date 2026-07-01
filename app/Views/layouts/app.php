@@ -19,7 +19,7 @@
                 <a href="<?= htmlspecialchars(Url::to('dashboard.php')) ?>">Dashboard</a>
                 <a href="#">Players</a>
                 <a href="#">Builds</a>
-                <a href="#">Loading Screen</a>
+                <a href="<?= htmlspecialchars(Url::to('loading.php')) ?>">Loading Screen</a>
                 <a href="<?= htmlspecialchars(Url::to('news.php')) ?>">News</a>
                 <a href="<?= htmlspecialchars(Url::to('settings.php')) ?>">Settings</a>
                 <a href="#">Monitoring</a>
