@@ -1,10 +1,11 @@
+<?php use MemoNetwork\Core\Url; ?>
 <!doctype html>
 <html lang="nl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($title ?? 'MemoNetwork') ?></title>
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(Url::to('assets/css/app.css')) ?>">
 </head>
 <body>
 <?php if (!empty($authLayout)): ?>
@@ -15,13 +16,13 @@
             <div class="mn-logo">Memo<span>Network</span></div>
             <p class="mn-muted">Control Panel Alpha 26</p>
             <nav class="mn-nav">
-                <a class="active" href="dashboard.php">Dashboard</a>
+                <a class="active" href="<?= htmlspecialchars(Url::to('dashboard.php')) ?>">Dashboard</a>
                 <a href="#">Players</a>
                 <a href="#">Builds</a>
                 <a href="#">Loading Screen</a>
                 <a href="#">News</a>
                 <a href="#">Monitoring</a>
-                <a href="logout.php">Logout</a>
+                <a href="<?= htmlspecialchars(Url::to('logout.php')) ?>">Logout</a>
             </nav>
         </aside>
         <main class="mn-main">
