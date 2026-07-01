@@ -18,7 +18,9 @@
             <nav class="mn-nav">
                 <a href="<?= htmlspecialchars(Url::to('dashboard.php')) ?>">Dashboard</a>
                 <a href="<?= htmlspecialchars(Url::to('players.php')) ?>">Players</a>
-                <a href="#">Builds</a>
+                <a href="<?= htmlspecialchars(Url::to('commands.php')) ?>">Command Center</a>
+                <a href="<?= htmlspecialchars(Url::to('builds.php')) ?>">Builds</a>
+                <a href="<?= htmlspecialchars(Url::to('logs.php')) ?>">Logs</a>
                 <a href="<?= htmlspecialchars(Url::to('loading.php')) ?>">Loading Screen</a>
                 <a href="<?= htmlspecialchars(Url::to('news.php')) ?>">News</a>
                 <a href="<?= htmlspecialchars(Url::to('settings.php')) ?>">Settings</a>
