@@ -17,12 +17,12 @@
             <p class="mn-muted">Control Panel Alpha 26</p>
             <nav class="mn-nav">
                 <a href="<?= htmlspecialchars(Url::to('dashboard.php')) ?>">Dashboard</a>
-                <a href="#">Players</a>
+                <a href="<?= htmlspecialchars(Url::to('players.php')) ?>">Players</a>
                 <a href="#">Builds</a>
                 <a href="<?= htmlspecialchars(Url::to('loading.php')) ?>">Loading Screen</a>
                 <a href="<?= htmlspecialchars(Url::to('news.php')) ?>">News</a>
                 <a href="<?= htmlspecialchars(Url::to('settings.php')) ?>">Settings</a>
-                <a href="#">Monitoring</a>
+                <a href="<?= htmlspecialchars(Url::to('migrate.php')) ?>">Database Update</a>
                 <a href="<?= htmlspecialchars(Url::to('logout.php')) ?>">Logout</a>
             </nav>
         </aside>
@@ -31,5 +31,8 @@
         </main>
     </div>
 <?php endif; ?>
+<?php foreach (($scripts ?? []) as $script): ?>
+    <script src="<?= htmlspecialchars(Url::to($script)) ?>"></script>
+<?php endforeach; ?>
 </body>
 </html>
