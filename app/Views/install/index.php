@@ -1,5 +1,5 @@
 <div class="mn-login">
-    <form class="mn-login-card" method="post" action="/install.php">
+    <form class="mn-login-card" method="post" action="install.php">
         <div class="mn-logo">Memo<span>Network</span></div>
         <p class="mn-muted">Alpha 26 installer - maak het eerste owner-account aan.</p>
 
@@ -7,7 +7,7 @@
             <div class="mn-card">
                 <h3>Installatie klaar</h3>
                 <p>Je kunt nu inloggen.</p>
-                <a class="mn-button" href="/login.php">Naar login</a>
+                <a class="mn-button" href="login.php">Naar login</a>
             </div>
         <?php else: ?>
             <?php if (!empty($error)): ?>
