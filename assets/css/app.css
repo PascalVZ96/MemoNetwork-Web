@@ -46,6 +46,8 @@ a { color: inherit; text-decoration: none; }
 .mn-error { background: rgba(255,90,90,.12); border: 1px solid rgba(255,90,90,.3); color: #ffd0d0; padding: 12px; border-radius: 12px; margin-bottom: 16px; }
 .mn-success { background: rgba(90,220,120,.12); border: 1px solid rgba(90,220,120,.3); color: #caffd5; padding: 12px; border-radius: 12px; margin-bottom: 16px; }
 .mn-form label { color: var(--mn-muted); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+.mn-inline-form { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.mn-inline-form .mn-input { margin: 0; max-width: 420px; }
 .mn-list { display: grid; gap: 12px; }
 .mn-list-item { display: flex; justify-content: space-between; gap: 18px; padding: 16px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); border-radius: 14px; }
 .mn-list-item.compact { display: block; }
@@ -59,6 +61,11 @@ a { color: inherit; text-decoration: none; }
 .mn-table { width: 100%; border-collapse: collapse; }
 .mn-table th, .mn-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; }
 .mn-table th { color: var(--mn-muted); text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
+.mn-build-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.mn-build-card { overflow: hidden; border: 1px solid rgba(255,255,255,.08); border-radius: 18px; background: rgba(255,255,255,.03); }
+.mn-build-preview { height: 160px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(255,145,0,.16), rgba(255,255,255,.04)); background-size: cover; background-position: center; color: var(--mn-muted); font-weight: 900; }
+.mn-build-body { padding: 16px; }
+.mn-build-body h3 { color: var(--mn-text); font-size: 18px; letter-spacing: 0; text-transform: none; }
 .mn-loading-layout { align-items: start; }
 .mn-loading-preview { position: relative; min-height: 520px; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg, #101722, #070a10); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,.1); }
 .mn-loading-overlay { position: absolute; inset: 0; }
