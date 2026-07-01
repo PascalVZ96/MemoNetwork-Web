@@ -63,6 +63,48 @@ CREATE TABLE IF NOT EXISTS server_players (
     UNIQUE KEY unique_server_player (server_key, steam_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS command_queue (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    server_key VARCHAR(80) NOT NULL DEFAULT 'main',
+    command_type VARCHAR(80) NOT NULL,
+    target_steam_id VARCHAR(40) NULL,
+    target_name VARCHAR(120) NULL,
+    payload TEXT NULL,
+    status ENUM('pending','sent','done','failed') NOT NULL DEFAULT 'pending',
+    result TEXT NULL,
+    created_by VARCHAR(80) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    sent_at TIMESTAMP NULL,
+    completed_at TIMESTAMP NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS action_logs (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    server_key VARCHAR(80) NOT NULL DEFAULT 'main',
+    action_type VARCHAR(80) NOT NULL,
+    actor VARCHAR(120) NULL,
+    target VARCHAR(160) NULL,
+    message TEXT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS builds (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    server_key VARCHAR(80) NOT NULL DEFAULT 'main',
+    build_name VARCHAR(160) NOT NULL,
+    owner_name VARCHAR(120) NULL,
+    owner_steam_id VARCHAR(40) NULL,
+    map_name VARCHAR(120) NULL,
+    props INT NOT NULL DEFAULT 0,
+    vehicles INT NOT NULL DEFAULT 0,
+    wire_entities INT NOT NULL DEFAULT 0,
+    performance_score INT NOT NULL DEFAULT 100,
+    preview_url VARCHAR(255) NULL,
+    file_url VARCHAR(255) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 INSERT IGNORE INTO settings (setting_key, setting_value) VALUES
 ('server_name', 'MemoNetwork'),
 ('server_subtitle', 'Industrial Sandbox'),
