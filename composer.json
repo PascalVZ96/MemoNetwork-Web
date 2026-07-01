@@ -1,0 +1,13 @@
+{
+  "name": "memonetwork/web",
+  "description": "MemoNetwork Web Control Panel",
+  "type": "project",
+  "require": {
+    "php": ">=8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "MemoNetwork\\": "app/"
+    }
+  }
+}
