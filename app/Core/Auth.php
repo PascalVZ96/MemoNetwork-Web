@@ -35,8 +35,7 @@ final class Auth
     public static function requireLogin(): void
     {
         if (!self::user()) {
-            header('Location: login.php');
-            exit;
+            Url::redirect('login.php');
         }
     }
 
