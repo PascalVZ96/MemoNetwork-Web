@@ -16,11 +16,12 @@
             <div class="mn-logo">Memo<span>Network</span></div>
             <p class="mn-muted">Control Panel Alpha 26</p>
             <nav class="mn-nav">
-                <a class="active" href="<?= htmlspecialchars(Url::to('dashboard.php')) ?>">Dashboard</a>
+                <a href="<?= htmlspecialchars(Url::to('dashboard.php')) ?>">Dashboard</a>
                 <a href="#">Players</a>
                 <a href="#">Builds</a>
                 <a href="#">Loading Screen</a>
-                <a href="#">News</a>
+                <a href="<?= htmlspecialchars(Url::to('news.php')) ?>">News</a>
+                <a href="<?= htmlspecialchars(Url::to('settings.php')) ?>">Settings</a>
                 <a href="#">Monitoring</a>
                 <a href="<?= htmlspecialchars(Url::to('logout.php')) ?>">Logout</a>
             </nav>
