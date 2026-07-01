@@ -28,3 +28,11 @@ CREATE TABLE IF NOT EXISTS api_tokens (
     token_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT IGNORE INTO settings (setting_key, setting_value) VALUES
+('server_name', 'MemoNetwork'),
+('server_subtitle', 'Industrial Sandbox'),
+('server_version', 'Alpha 26.0-dev'),
+('website_url', 'https://memocraft.nl'),
+('discord_url', 'https://memocraft.nl/?c=Discord'),
+('footer_text', 'Welkom op MemoNetwork');
