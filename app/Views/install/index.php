@@ -1,5 +1,6 @@
+<?php use MemoNetwork\Core\Url; ?>
 <div class="mn-login">
-    <form class="mn-login-card" method="post" action="install.php">
+    <form class="mn-login-card" method="post" action="<?= htmlspecialchars(Url::to('install.php')) ?>">
         <div class="mn-logo">Memo<span>Network</span></div>
         <p class="mn-muted">Alpha 26 installer - database, owner-account en .env automatisch aanmaken.</p>
 
@@ -7,7 +8,7 @@
             <div class="mn-card">
                 <h3>Installatie klaar</h3>
                 <p>Database is verbonden, tabellen zijn aangemaakt en het owner-account staat klaar.</p>
-                <a class="mn-button" href="login.php">Naar login</a>
+                <a class="mn-button" href="<?= htmlspecialchars(Url::to('login.php')) ?>">Naar login</a>
             </div>
         <?php else: ?>
             <?php if (!empty($error)): ?>
