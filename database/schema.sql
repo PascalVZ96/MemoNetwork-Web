@@ -105,13 +105,47 @@ CREATE TABLE IF NOT EXISTS builds (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS console_logs (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    server_key VARCHAR(80) NOT NULL DEFAULT 'main',
+    level VARCHAR(30) NOT NULL DEFAULT 'info',
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS monitoring_history (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    server_key VARCHAR(80) NOT NULL DEFAULT 'main',
+    players_online INT NOT NULL DEFAULT 0,
+    entities INT NOT NULL DEFAULT 0,
+    props INT NOT NULL DEFAULT 0,
+    server_fps DECIMAL(8,2) NULL,
+    ram_mb INT NULL,
+    cpu_percent DECIMAL(8,2) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS alerts (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    server_key VARCHAR(80) NOT NULL DEFAULT 'main',
+    severity ENUM('info','warning','critical') NOT NULL DEFAULT 'info',
+    title VARCHAR(160) NOT NULL,
+    message TEXT NULL,
+    is_resolved TINYINT(1) NOT NULL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    resolved_at TIMESTAMP NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 INSERT IGNORE INTO settings (setting_key, setting_value) VALUES
 ('server_name', 'MemoNetwork'),
 ('server_subtitle', 'Industrial Sandbox'),
 ('server_version', 'Alpha 26.0-dev'),
 ('website_url', 'https://memocraft.nl'),
 ('discord_url', 'https://memocraft.nl/?c=Discord'),
-('footer_text', 'Welcome to MemoNetwork');
+('footer_text', 'Welcome to MemoNetwork'),
+('alert_cpu_percent', '90'),
+('alert_ram_mb', '4096'),
+('alert_min_fps', '20');
 
 INSERT IGNORE INTO server_status (server_key, server_name, is_online, health) VALUES
 ('main', 'MemoNetwork', 0, 'offline');
