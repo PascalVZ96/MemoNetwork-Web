@@ -18,12 +18,14 @@
             <nav class="mn-nav">
                 <a href="<?= Url::to('dashboard.php') ?>">Dashboard</a>
                 <a href="<?= Url::to('players.php') ?>">Players</a>
+                <a href="<?= Url::to('profiles.php') ?>">Player Profiles</a>
                 <a href="<?= Url::to('commands.php') ?>">Command Center</a>
                 <a href="<?= Url::to('console.php') ?>">Live Console</a>
                 <a href="<?= Url::to('monitoring.php') ?>">Monitoring</a>
                 <a href="<?= Url::to('alerts.php') ?>">Alerts</a>
                 <a href="<?= Url::to('builds.php') ?>">Builds</a>
                 <a href="<?= Url::to('logs.php') ?>">Logs</a>
+                <a href="<?= Url::to('integration.php') ?>">Core Integration</a>
                 <a href="<?= Url::to('loading.php') ?>">Loading Screen</a>
                 <a href="<?= Url::to('news.php') ?>">News</a>
                 <a href="<?= Url::to('settings.php') ?>">Settings</a>
