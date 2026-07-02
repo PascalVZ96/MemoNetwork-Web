@@ -63,6 +63,30 @@ CREATE TABLE IF NOT EXISTS server_players (
     UNIQUE KEY unique_server_player (server_key, steam_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS player_profiles (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    steam_id VARCHAR(40) NOT NULL UNIQUE,
+    steam_id64 VARCHAR(40) NULL,
+    player_name VARCHAR(120) NOT NULL,
+    avatar_url VARCHAR(255) NULL,
+    first_seen TIMESTAMP NULL,
+    last_seen TIMESTAMP NULL,
+    total_playtime_seconds INT NOT NULL DEFAULT 0,
+    notes TEXT NULL,
+    warnings INT NOT NULL DEFAULT 0,
+    bans INT NOT NULL DEFAULT 0,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS player_events (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    server_key VARCHAR(80) NOT NULL DEFAULT 'main',
+    steam_id VARCHAR(40) NOT NULL,
+    event_type VARCHAR(80) NOT NULL,
+    message TEXT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE IF NOT EXISTS command_queue (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     server_key VARCHAR(80) NOT NULL DEFAULT 'main',
